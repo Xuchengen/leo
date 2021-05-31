@@ -1,0 +1,61 @@
+<idea-plugin>
+    <!-- 插件ID -->
+    <id>com.github.xuchengen.leo.plug</id>
+    <!-- 插件名称 -->
+    <name>SQL Dump</name>
+    <!-- 插件提供商 -->
+    <vendor email="xuchengen@gmail.com" url="https://www.xuchengen.cn">徐承恩</vendor>
+    <!-- 版本号 -->
+    <version>1.0.1</version>
+
+    <!-- 插件描述 -->
+    <description><![CDATA[
+    <p>When the project is running, it will output the complete executed SQL statement on the console.</p>
+    <p>项目运行时在控制台输出完整可执行的SQL语句。</p>
+    <lable>Support:</lable>
+    <ul>
+        <li>Oracle</li>
+        <li>MySQL</li>
+        <li>PostgreSQL</li>
+        <li>Microsoft SQL Server</li>
+    </ul>
+    <footer>
+        <lable>Contact me</lable>
+        <p>
+            <a href="mailto:xuchengen@gmail.com">Gmail</a> |
+            <a href="mailto:771247770@qq.com">QQ Mail</a> |
+            <a href="https://github.com/Xuchengen">GitHub</a> |
+            <a href="https://www.xuchengen.cn">Blog</a>
+        </p>
+    </footer>
+    ]]></description>
+
+    <!-- 变更备注 -->
+    <change-notes></change-notes>
+
+    <!-- 插件依赖 -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
+
+    <!-- 插件拓展点 -->
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- 此处添加您的拓展程序 -->
+        <toolWindow id="SQL Dump" anchor="bottom"
+                    icon="/icon/toolWindowSQLGenerator.svg"
+                    factoryClass="com.github.xuchengen.leo.plug.ConsoleToolWindow"/>
+        <java.programPatcher implementation="com.github.xuchengen.leo.plug.PerRunCheck"/>
+    </extensions>
+
+    <!-- 插件动作 -->
+    <actions>
+        <!-- 此处添加您的动作 -->
+    </actions>
+
+    <!-- 应用级监听器 -->
+    <applicationListeners>
+        <!-- 此处添加您的监听器 -->
+        <listener class="com.github.xuchengen.leo.plug.listener.SqlDumpProjectListener"
+                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
+    </applicationListeners>
+
+</idea-plugin>

@@ -1,0 +1,5 @@
+rootProject.name = 'Leo'
+include 'leo-dal'
+include 'leo-plug'
+include 'leo-agent-core'
+

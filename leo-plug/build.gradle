@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.7.2'
+}
+
+group 'com.github.xuchengen.leo'
+version '1.0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // 添加libs目录中的jar
+    implementation fileTree(dir: 'libs', includes: ['*jar'])
+}
+
+intellij {
+    version '2021.1'
+    plugins = ['com.intellij.java']
+}
+

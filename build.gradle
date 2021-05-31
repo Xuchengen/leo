@@ -1,0 +1,16 @@
+plugins {
+    id 'java'
+}
+
+group 'com.github.xuchengen.leo'
+version '1.0-SNAPSHOT'
+
+// 私服仓库
+repositories {
+    mavenCentral()
+}
+
+// 依赖
+dependencies {
+
+}

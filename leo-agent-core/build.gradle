@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "6.1.0"
+}
+
+group 'com.github.xuchengen.leo'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+// 仓库
+repositories {
+    mavenCentral()
+}
+
+// 依赖
+dependencies {
+    // 运行时依赖
+    implementation group: 'org.javassist', name: 'javassist', version: '3.27.0-GA'
+    implementation group: 'cn.hutool', name: 'hutool-all', version: '5.6.4'
+    implementation project(':leo-dal')
+
+    /*implementation group: 'mysql', name: 'mysql-connector-java', version: '5.1.49'
+    implementation group: 'com.oracle.database.jdbc', name: 'ojdbc8', version: '21.1.0.0'
+    implementation group: 'com.microsoft.sqlserver', name: 'mssql-jdbc', version: '9.2.1.jre8'
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.19'*/
+    // 编译期依赖
+    compileOnly group: 'com.j256.ormlite', name: 'ormlite-jdbc', version: '5.3'
+    compileOnly group: 'org.xerial', name: 'sqlite-jdbc', version: '3.7.2'
+}
+
+shadowJar {
+    manifest {
+        attributes(
+                'Premain-Class': 'com.github.xuchengen.leo.agent.core.EntryPoint'
+        )
+    }
+}

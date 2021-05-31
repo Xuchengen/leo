@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+group 'com.github.xuchengen.leo'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // 运行时依赖
+    implementation group: 'org.xerial', name: 'sqlite-jdbc', version: '3.7.2'
+    implementation group: 'com.j256.ormlite', name: 'ormlite-jdbc', version: '5.3'
+}
