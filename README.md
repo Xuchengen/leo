@@ -1,0 +1,2 @@
+# leo
+Leo是一个基于Java agent技术实现的一款IDEA插件，它在项目运行期输出SQL语句辅助你更好的编码
